@@ -235,3 +235,6 @@ span.glyphicon-log-in{
 .loading{
   background:url("../images/loading.GIF") no-repeat;
 }
+.dashboard a.glyphicon-chevron-left, .home a.glyphicon-chevron-left{
+  display: none;
+}
