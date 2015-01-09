@@ -14,7 +14,7 @@ h1{
     font-size: 18px;        
 }
 h1{
-    margin: 40px 18px;
+    margin: 110px 18px 40px 18px;
     font-weight: 700;
 }
 label{
@@ -23,13 +23,31 @@ label{
     font-weight: 600;
     font-size: 14px;
 }
+header{
+  margin-bottom: 100px;
+}
+.home header{
+  margin-bottom: 0;
+}
+.logo{
+  display: none;
+}
+.home .page-heading{display: none;}
+.page-heading{
+  font-size: 22px;
+  color: #fff;
+  margin-left: -20px;
+  margin-top: -5px;
+  font-weight: 700;
+}
+.home .logo{display: block;}
 .home .submit{
-    padding: 65px 20px 40px 20px;
+    padding: 35px 20px 40px 20px;
     background: #e7e7e7;
     text-align: center;
     margin-left: -15px;
     margin-right: -15px;
-    margin-top: 145px;
+    margin-top: 110px;
 }
 .home button{
     width: 90%;
@@ -134,12 +152,28 @@ a, a:hover, a:focus {
   font-size: 16px;  
 }
 
-.dashboard .nav-pills li{
-  background-color: #ECECEC;
-  border: solid 1px #EEE;
+.dashboard .nav-pills li, .dashboard .nav-pills li:focus, .dashboard .nav-pills li:hover, .dashboard .nav-pills li:visited{
+  background-color: #FF6300!important;
+  border: solid 1px #FF6300!important;
+  border-radius: 5px;
+  margin-top: 15px;  
 }
-.dashboard .nav-pills li a .badge{ float: right;}
 
+.dashboard .nav-pills li a{
+  color: #fff;
+  font-size: 14px;  
+  font-weight: 400;
+}
+.dashboard .nav-pills li a .badge{ float: right;
+background-color: #444444;
+margin-top: -2px;
+padding: 6px 7px;
+border-radius: 5px;
+}
+.nav>li>a:hover, .nav>li>a:focus{
+    background-color: #FF6300!important;
+  border: solid 1px #FF6300!important;
+}
 .success{
   color: #008600;
   font-size: 16px;
@@ -181,3 +215,14 @@ background-color: #444444;
   padding-bottom: 11px;
   margin-bottom: 0;
 }
+.navbar-default{
+  background-color: #444444;
+}
+span.glyphicon-chevron-left{
+  color: #fff;
+  font-size: 20px;
+}
+.pdtp10{
+  padding-top: 10px;
+}
+.mrgntp0{margin-top: 0!important;}
