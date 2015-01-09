@@ -226,3 +226,7 @@ span.glyphicon-chevron-left{
   padding-top: 10px;
 }
 .mrgntp0{margin-top: 0!important;}
+span.glyphicon-log-in{
+  font-size: 20px;
+  color: #fff;
+}
