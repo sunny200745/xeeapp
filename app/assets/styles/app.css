@@ -14,7 +14,7 @@ h1{
     font-size: 18px;        
 }
 h1{
-    margin: 110px 18px 40px 18px;
+    margin: 70px 18px 40px 18px;
     font-weight: 700;
 }
 label{
@@ -32,6 +32,7 @@ header{
 .logo{
   display: none;
 }
+.home .log-in{display: none;}
 .home .page-heading{display: none;}
 .page-heading{
   font-size: 22px;
@@ -47,7 +48,7 @@ header{
     text-align: center;
     margin-left: -15px;
     margin-right: -15px;
-    margin-top: 110px;
+    margin-top: 20px;
 }
 .home button{
     width: 90%;
@@ -144,6 +145,7 @@ a, a:hover, a:focus {
     display: inline;
     margin-left: 5px;
     vertical-align: text-bottom;
+    font-weight: 500;
   }
 
 .profile-details p{
@@ -229,4 +231,7 @@ span.glyphicon-chevron-left{
 span.glyphicon-log-in{
   font-size: 20px;
   color: #fff;
+}
+.loading{
+  background:url("../images/loading.GIF") no-repeat;
 }
