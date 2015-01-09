@@ -33,7 +33,6 @@ angular.module('xeApp.controllers', ['ui.router'])
 					console.log(val, index)
 					if(str == val.NAME){
 						searchData.push(val);
-						return val;
 					}
 				}));	
 				$q.all(prom, function(status){
@@ -42,17 +41,6 @@ angular.module('xeApp.controllers', ['ui.router'])
 						return item.NAME;
 					});
 				})
-				/*
-			return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
-				params: {
-					address: val,
-					sensor: false
-				}
-			}).then(function(response){
-				return response.data.results.map(function(item){
-					return item.formatted_address;
-				});
-			});*/
 		};
 		$scope.fn_profileSearch = function(){
 			if(!$scope.searchContent){
