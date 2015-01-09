@@ -1,0 +1,128 @@
+/*
+Template Name: DASHGUM FREE - Bootstrap 3.2 Admin Theme
+Template Version: 1.0
+Author: Carlos Alvarez
+Website: http://blacktie.co
+Premium: http://www.gridgum.com
+*/
+
+/* Import fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,600);
+
+/* BASIC THEME CONFIGURATION */
+body {
+    color: #797979;
+	background: #fff;
+    font-family: 'Open Sans';
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size:13px;
+}
+h1{
+    font-size: 18px;        
+}
+h1{
+    margin: 40px 18px;
+    font-weight: 700;
+}
+.home p{
+    margin: 10px 0
+}
+label{
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+.home .submit{
+    padding: 65px 20px 40px 20px;
+    background: #e7e7e7;
+    text-align: center;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 30px;
+}
+.home button{
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 10px;
+    padding: 10px 0;
+}
+button span.glyphicon-circle-arrow-right{
+    padding-left: 8px;
+    font-size: 14px;
+    vertical-align: sub;
+}
+.home .submit p.help{
+    font-weight: 700;
+    font-style: strikethrough;
+}
+button{
+    background-color: #FF6300!important;
+    border-color: #FF6300!important;
+    font-size: 18px;
+    margin-top: 30px;     
+}
+ul li {
+    list-style: none;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+::selection {
+
+    background: #68dff0;
+    color: #fff;
+}
+::-moz-selection {
+    background: #68dff0;
+    color: #fff;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard .search-form input[type="text"]{
+    width: 86%;
+    display: inline;
+}
+.dashboard .search-form button{
+    display: inline;
+    margin: -4px 0 0 -6px;   
+}
+.apply-form{
+    padding-top: 20px;
+}
+.apply-form select{
+    width: 100%;
+}
+.apply-form button{
+    margin-top: 20px;
+    padding: 10px 0;
+}
+.profile-pic {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 5px solid #eee;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+}
+.profile-details {
+    padding-top: 10px;
+} 
+  .profile-details p{
+    color: #fc5a02;
+    padding-left: 10px;
+    
+  }
