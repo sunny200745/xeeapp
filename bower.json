@@ -1,0 +1,19 @@
+{
+  "name": "XeeApp",
+  "description": "Xebia App",
+  "version": "0.0.1",
+  "homepage": "https://github.com/guptaarun/xeeapp",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "angular-animate": "~1.2.x",
+    "angular-ui-router": "0.2.11",
+    "angular-bootstrap": "0.11.2",
+    "angular-local-storage":"0.1.5",
+    "bootstrap": "^3.1.1"
+  }
+}
