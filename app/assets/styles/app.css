@@ -133,7 +133,8 @@ a, a:hover, a:focus {
 
 .profile-details p{
   color: #fc5a02;
-  padding-left: 10px;  
+  padding-left: 10px;
+  font-size: 16px;  
 }
 
 .dashboard .nav-pills li{
