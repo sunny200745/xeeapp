@@ -218,7 +218,7 @@ background-color: #444444;
 .navbar-default{
   background-color: #444444;
 }
-span.glyphicon-chevron-left{
+a.glyphicon-chevron-left{
   color: #fff;
   font-size: 20px;
 }

@@ -9,6 +9,9 @@ angular.module('xeApp.controllers', ['ui.router'])
 	        Auth.logout()
 	        $location.path( "/home" );
 		};
+		$scope.doBack = function(){
+			$window.history.back();
+		}
 	}])
 	.controller('xeFooter',['$scope',function($scope){
 	}])
