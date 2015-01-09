@@ -13,26 +13,34 @@ angular.module('xeApp.controllers', ['ui.router'])
 			$location.path( "/dashboard" );
 		};
 	}])
-	.controller('xeDashboard',['$scope', '$location', 'xebiaData', '$rootScope',function($scope, $location, xebiaData, $rootScope){
+	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService',function($scope, $location, xebiaData, dataService){
 		$scope.searchContent;
 		
 
-		$scope.fn_profileSearch = function(){	
-			angular.forEach(xebiaData.all,function(val, index){
-				if($scope.searchContent === val.ID){
-					$rootScope.searchedData = val;
-					return false
-				}
-			});		
-			if(!$rootScope.searchedData){
-				alert("No Data Matched")
+		$scope.fn_profileSearch = function(){
+			if(!$scope.searchContent){
+				alert("Nothing entered")
 				return false;
+			}else{
+				var xebiaId = $scope.searchContent.match(/xi/gi) ? $scope.searchContent.toUpperCase() : 'XI'+$scope.searchContent;	
+				angular.forEach(xebiaData.all,function(val, index){
+					if(xebiaId == val.ID){
+						dataService.setSearchedData(val);
+						return false
+					}
+				});		
+				if(!dataService.getSearchedData()){
+					alert("No Data Matched")
+					return false;
+				}
+				$location.path( "/profile/"+xebiaId );
 			}
-			$location.path( "/profile/test" );
+
+			
 		};
 	}])
-	.controller('xeUserProfile',['$scope', '$stateParams', '$rootScope', function($scope, $stateParams, $rootScope){
-		$scope.data = $rootScope.searchedData
+	.controller('xeUserProfile',['$scope', '$stateParams', 'dataService', function($scope, $stateParams, dataService){
+		$scope.data = dataService.getSearchedData();
 		
 	}])
 	.controller('xeApply',['$scope', '$stateParams', function($scope, $stateParams){
