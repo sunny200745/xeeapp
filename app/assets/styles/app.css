@@ -78,13 +78,9 @@ a, a:hover, a:focus {
     height: 100%;
 }
 
-.dashboard .search-form input[type="text"]{
-    width: 86%;
-    display: inline;
-}
 .dashboard .search-form button{
-    display: inline;
-    margin: -4px 0 0 -6px;   
+    color: #FFF;
+    margin-top: 0px;   
 }
 .apply-form{
     padding-top: 20px;
