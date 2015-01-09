@@ -24,4 +24,17 @@ angular.module('xeApp.factory', [])
                 return deffered.promise;
             }
         } 
+    })
+    .factory('xebiaData', function ($firebase, FIREBASE_URL) {
+        var ref = new Firebase(FIREBASE_URL);
+        var xebiaData = $firebase(ref.child('xebiaData')).$asArray();
+
+        var data = {
+            all: xebiaData,       
+            get: function (postId) {
+              return $firebase(ref.child('xebiaData').child(postId)).$asObject();
+            }
+        };
+        return data;
+      
     });

@@ -6,12 +6,14 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-4">
-				<img src="assets/images/ava3.png" class="profile-pic" />
+				<img ng-src="{{data.PHOTO}}" class="profile-pic" />
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-8 profile-details">
-				<p>Michael Jane</p>
-				<p>mj@xebia.com</p>
-				<p>9812345678</p>				
+				<p>{{data.ID}}</p>
+				<p>{{data.NAME}}</p>
+				<p>{{data.EMAIL}}</p>
+				<p>{{data.PHONENUMBER}}</p>				
+				<p>{{data.GENDER}}</p>	
 			</div>
 		</div>
 		<div class="row pdtp25">

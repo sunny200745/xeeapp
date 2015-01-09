@@ -1,6 +1,7 @@
 'use strict';
 // Declare app level module which depends on filters, and services
 angular.module('xeApp', [
+  'firebase',
   'ngRoute',
   'xeApp.filters',
   'xeApp.services',
@@ -8,6 +9,7 @@ angular.module('xeApp', [
   'xeApp.controllers',
   'xeApp.factory',
   'ui.bootstrap'
+  
 ])
 .config(["$locationProvider", "$stateProvider", "$urlRouterProvider", "$httpProvider", function($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
   $stateProvider
@@ -51,6 +53,14 @@ angular.module('xeApp', [
         'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
       }
     })
+    .state('status', {
+      url: "/status",
+      views: { 
+        'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
+        'main': { templateUrl: 'partials/status.html', controller: 'xeApply' },
+        'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
+      }
+    })
     .state('profileDetail', {
       url: "/profile/:profileID",
       views: { 
@@ -62,4 +72,4 @@ angular.module('xeApp', [
     $urlRouterProvider.otherwise('/home');
   }]).run(function ($state,$rootScope) {
     $rootScope.$state = $state;
-  });
+  }).constant('FIREBASE_URL', 'https://xeeapp.firebaseio.com/');;
