@@ -13,14 +13,27 @@ angular.module('xeApp.controllers', ['ui.router'])
 			$location.path( "/dashboard" );
 		};
 	}])
-	.controller('xeDashboard',['$scope', '$location', 'xebiaData',function($scope, $location, xebiaData){
-		$scope.fn_profileSearch = function(){			
+	.controller('xeDashboard',['$scope', '$location', 'xebiaData', '$rootScope',function($scope, $location, xebiaData, $rootScope){
+		$scope.searchContent;
+		
+
+		$scope.fn_profileSearch = function(){	
+			angular.forEach(xebiaData.all,function(val, index){
+				if($scope.searchContent === val.ID){
+					$rootScope.searchedData = val;
+					return false
+				}
+			});		
+			if(!$rootScope.searchedData){
+				alert("No Data Matched")
+				return false;
+			}
 			$location.path( "/profile/test" );
 		};
-		console.debug(xebiaData.all)
 	}])
-	.controller('xeUserProfile',['$scope', '$stateParams', function($scope, $stateParams){
-		//$stateParams.profileId
+	.controller('xeUserProfile',['$scope', '$stateParams', '$rootScope', function($scope, $stateParams, $rootScope){
+		$scope.data = $rootScope.searchedData
+		
 	}])
 	.controller('xeApply',['$scope', '$stateParams', function($scope, $stateParams){
 		
