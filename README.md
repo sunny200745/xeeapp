@@ -18,7 +18,7 @@ Clone the XeeApp repository using [git][git]:
 
 ```
 git clone https://github.com/guptaarun/xeeapp.git
-cd XeeApp
+cd xeeapp
 ```
 
 ### Install Dependencies
@@ -51,8 +51,3 @@ npm start
 ```
 
 Now browse to the app at `http://localhost:8000/app/index.html`.
-
-
-## Contact
-
-guptaarun@hotmail.com
