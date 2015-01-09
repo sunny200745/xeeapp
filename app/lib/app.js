@@ -14,6 +14,7 @@ angular.module('xeApp', [
   $stateProvider
     .state('home', {
       url: "/home",
+      data: {title: "Home"},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/login.html', controller: 'xeMain' },
@@ -22,6 +23,7 @@ angular.module('xeApp', [
     })
     .state('dashboard', {
       url: "/dashboard",
+      data: {title: "Dashboard"},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/dashboard.html', controller: 'xeDashboard' },
@@ -30,6 +32,7 @@ angular.module('xeApp', [
     })
     .state('apply', {
       url: "/apply",
+      data: {title: "Apply"},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/apply.html', controller: 'xeApply' },
@@ -38,6 +41,7 @@ angular.module('xeApp', [
     })
     .state('applyFor', {
       url: "/apply/:for",
+      data: {title: "Apply for "},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/apply.html', controller: 'xeApply' },
@@ -46,6 +50,7 @@ angular.module('xeApp', [
     })
     .state('applySuccess', {
       url: "/apply/:for/success",
+      data: {title: "Success"},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/applySuccess.html', controller: 'xeApply' },
@@ -54,6 +59,7 @@ angular.module('xeApp', [
     })
     .state('status', {
       url: "/status",
+      data: {title: "Current Status"},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/status.html', controller: 'xeApply' },
@@ -62,6 +68,7 @@ angular.module('xeApp', [
     })
     .state('profileDetail', {
       url: "/profile/:profileID",
+      data: {title: "Profile"},
       views: { 
         'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
         'main': { templateUrl: 'partials/profile.html', controller: 'xeUserProfile' },
