@@ -16,13 +16,41 @@ angular.module('xeApp.controllers', ['ui.router'])
 		};
 		
 	}])
-	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService',function($scope, $location, xebiaData, dataService){
+	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService', '$http', '$q',function($scope, $location, xebiaData, dataService, $http, $q){
 		$scope.searchContent;
-		
-
+		// Any function returning a promise object can be used to load values asynchronously
+		$scope.getUsers = function(str) {
+				var searchData = [];
+				return searchData;
+				var prom = []	
+				prom.push(angular.forEach(xebiaData.all,function(val, index){
+					console.log(val, index)
+					if(str == val.NAME){
+						searchData.push(val);
+						return val;
+					}
+				}));	
+				$q.all(prom, function(status){
+					console.log(searchData)
+					return searchData.data.results.map(function(item){
+						return item.NAME;
+					});
+				})
+				/*
+			return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
+				params: {
+					address: val,
+					sensor: false
+				}
+			}).then(function(response){
+				return response.data.results.map(function(item){
+					return item.formatted_address;
+				});
+			});*/
+		};
 		$scope.fn_profileSearch = function(){
 			if(!$scope.searchContent){
-				alert("Nothing entered")
+				//alert("Nothing entered")
 				return false;
 			}else{
 				var xebiaId = $scope.searchContent.match(/xi/gi) ? $scope.searchContent.toUpperCase() : 'XI'+$scope.searchContent;	
