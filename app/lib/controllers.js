@@ -19,5 +19,8 @@ angular.module('xeApp.controllers', ['ui.router'])
 		};
 	}])
 	.controller('xeUserProfile',['$scope', '$stateParams', function($scope, $stateParams){
-		$stateParams.contactId
+		//$stateParams.profileId
+	}])
+	.controller('xeApply',['$scope', '$stateParams', function($scope, $stateParams){
+		
 	}]);
