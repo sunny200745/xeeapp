@@ -13,7 +13,7 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="assets/styles/custom.min.css">
 </head>
-<body ng-controller="xeInit">
+<body ng-controller="xeInit" class="{{$state.current.name}}">
   <header ui-view="header"></header>
   <div class="container">
     <div class="col-md-9 main" ui-view="main"></div>

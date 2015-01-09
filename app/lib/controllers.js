@@ -2,15 +2,13 @@
 /* Common controllers */
 
 angular.module('xeApp.controllers', ['ui.router'])
-	.controller('xeInit',['$scope', '$state',function($scope, $state){
-		$scope.$state = $state;
+	.controller('xeInit',['$scope',function($scope){
 	}])
-	.controller('xeMain',['$scope', '$state',function($scope, $state){
-		$scope.$state = $state;
+	.controller('xeMain',['$scope',function($scope){
 	}])
-	.controller('xeHeader',['$scope', '$state',function($scope, $state){
-		$scope.$state = $state;
+	.controller('xeHeader',['$scope',function($scope){
+		
 	}])
-	.controller('xeFooter',['$scope', '$state',function($scope, $state){
-		$scope.$state = $state;
+	.controller('xeFooter',['$scope',function($scope){
+		
 	}]);
