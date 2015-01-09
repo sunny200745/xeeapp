@@ -1,24 +1,28 @@
 <div class="container">		
-		<div class="row pdtp25">
-			<div class="col-md-12 col-sm-12 col-xs-12">
-				<form class="search-form" ng-submit="fn_profileSearch()">
-					<label for="name">Where is</label>
-					<div class="input-group">
-				      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchContent">
-				      <span class="input-group-btn">
-				        <button class="btn btn-default" type="submit">Go!</button>
-				      </span>
-				    </div><!-- /input-group -->
-				</form>
-				<form class="apply-form">					
-						<label>Apply for</label>
-						<ul class="nav nav-pills nav-stacked">
-						  <li class="mrgntp0"><a href="apply/pl">Planned Leave <span class="badge">12</span></a></li>
-						  <li><a href="apply/cl">Casual Leave <span class="badge">2.5</span></a></li>
-						  <li><a href="apply/sl">Sick Leave <span class="badge">4</span></a></li>
-						  <li><a href="apply/wfh">Work From Home</a></li>
-						</ul>
-				</form>
-			</div>
+	<div class="row pdtp25">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<form class="search-form" ng-submit="fn_profileSearch()">
+				<input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="user for users in getUsers($viewValue)  | limitTo:8" typeahead-loading="loadingUsers" class="form-control">
+			    <i ng-show="loadingUsers" class="glyphicon glyphicon-refresh"></i>
+
+				<label for="name">Where is</label>
+				<div class="input-group">
+			      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchContent">
+			      <span class="input-group-btn">
+			        <button class="btn btn-default" type="submit">Go!</button>
+			      </span>
+			    </div><!-- /input-group -->
+			</form>
+			<form class="apply-form">					
+					<label>Apply for</label>
+					<ul class="nav nav-pills nav-stacked">
+					  <li class="mrgntp0"><a href="apply/pl">Planned Leave <span class="badge">12</span></a></li>
+					  <li><a href="apply/cl">Casual Leave <span class="badge">2.5</span></a></li>
+					  <li><a href="apply/sl">Sick Leave <span class="badge">4</span></a></li>
+					  <li><a href="apply/wfh">Work From Home</a></li>
+					</ul>
+			</form>
 		</div>
 	</div>
+</div>
+

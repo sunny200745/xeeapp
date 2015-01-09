@@ -9,7 +9,6 @@ angular.module('xeApp', [
   'xeApp.controllers',
   'xeApp.factory',
   'ui.bootstrap'
-  
 ])
 .config(["$locationProvider", "$stateProvider", "$urlRouterProvider", "$httpProvider", function($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
   $stateProvider
