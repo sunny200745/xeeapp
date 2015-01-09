@@ -37,9 +37,7 @@ header{
 .page-heading{
   font-size: 22px;
   color: #fff;
-  margin-left: -20px;
   margin-top: -5px;
-  font-weight: 700;
 }
 .home .logo{display: block;}
 .home .submit{
