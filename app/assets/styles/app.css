@@ -17,9 +17,6 @@ h1{
     margin: 40px 18px;
     font-weight: 700;
 }
-.home p{
-    margin: 10px 0
-}
 label{
     display: block;
     text-align: left;
@@ -32,7 +29,7 @@ label{
     text-align: center;
     margin-left: -15px;
     margin-right: -15px;
-    margin-top: 30px;
+    margin-top: 145px;
 }
 .home button{
     width: 90%;
@@ -46,8 +43,8 @@ button span.glyphicon-circle-arrow-right{
     vertical-align: sub;
 }
 .home .submit p.help{
-    font-weight: 700;
-    font-style: strikethrough;
+    font-weight: 700; 
+     margin: 10px 0
 }
 button{
     background-color: #FF6300!important;
@@ -109,7 +106,7 @@ a, a:hover, a:focus {
 .profile-details {
     padding-top: 10px;
 } 
-<<<<<<< HEAD
+
   .profile-details p{
     color: #fc5a02;
     padding-left: 10px;
@@ -141,6 +138,46 @@ a, a:hover, a:focus {
   background-color: #ECECEC;
   border: solid 1px #EEE;
 }
-.dashboard .nav-pills li a .badge{ float: right }
+.dashboard .nav-pills li a .badge{ float: right;}
 
-
+.success{
+  color: #008600;
+  font-size: 16px;
+}
+.success .profile-pic {
+  width: 180px;
+  height: 180px;
+}
+.footer{
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 60px;
+background-color: #444444;
+}
+.footer p.brdr{
+  border-right: 1px solid #fff;
+ 
+}
+.footer p span.glyphicon{
+  font-size: 30px;
+  color: #fff;
+  padding: 15px 15px 0 15px;
+}
+.home span.glyphicon-user{
+  position: absolute;
+  top:40px;
+  left: 25px;
+}
+ .home span.glyphicon-lock{
+  position: absolute;
+  top: 120px;
+  left: 25px;
+ }
+.home input[type="email"], .home input[type="password"]{  
+  padding: 20px 20px 20px 28px;
+}
+.home-icon{
+  padding-bottom: 11px;
+  margin-bottom: 0;
+}
