@@ -8,10 +8,13 @@ angular.module('xeApp.controllers', ['ui.router'])
 	}])
 	.controller('xeFooter',['$scope',function($scope){
 	}])
-	.controller('xeMain',['$scope', '$location',function($scope,$location){
-		$scope.fn_login = function(){			
-			$location.path( "/dashboard" );
+	.controller('xeMain',['$scope', '$location', 'Auth',function($scope, $location, Auth){
+		$scope.fn_login = function () {
+		    Auth.login($scope.user).then(function() {
+		        $location.path( "/dashboard" );		     
+		    });
 		};
+		
 	}])
 	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService',function($scope, $location, xebiaData, dataService){
 		$scope.searchContent;
