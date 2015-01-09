@@ -51,6 +51,14 @@ angular.module('xeApp', [
         'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
       }
     })
+    .state('status', {
+      url: "/status",
+      views: { 
+        'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
+        'main': { templateUrl: 'partials/status.html', controller: 'xeApply' },
+        'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
+      }
+    })
     .state('profileDetail', {
       url: "/profile/:profileID",
       views: { 
