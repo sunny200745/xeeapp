@@ -4,7 +4,11 @@
 angular.module('xeApp.controllers', ['ui.router'])
 	.controller('xeInit',['$scope',function($scope){
 	}])
-	.controller('xeHeader',['$scope',function($scope){
+	.controller('xeHeader',['$scope', '$location', 'Auth',function($scope, $location, Auth){
+		$scope.logout = function () {				
+	        Auth.logout()
+	        $location.path( "/home" );
+		};
 	}])
 	.controller('xeFooter',['$scope',function($scope){
 	}])
