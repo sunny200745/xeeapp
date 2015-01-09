@@ -18,6 +18,30 @@ angular.module('xeApp', [
         'main': { templateUrl: 'partials/login.html', controller: 'xeMain' },
         'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
       }
+    })
+    .state('dashboard', {
+      url: "/dashboard",
+      views: { 
+        'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
+        'main': { templateUrl: 'partials/dashboard.html', controller: 'xeDashboard' },
+        'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
+      }
+    })
+    .state('profile', {
+      url: "/profile",
+      views: { 
+        'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
+        'main': { templateUrl: 'partials/dashboard.html', controller: 'xeDashboard' },
+        'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
+      }
+    })
+    .state('profile.details', {
+      url: "/profile/:id",
+      views: { 
+        'header': { templateUrl: 'partials/common/header.html', controller: 'xeHeader' },
+        'main': { templateUrl: 'partials/profile.html', controller: 'xeUserProfile' },
+        'footer': { templateUrl: 'partials/common/footer.html', controller: 'xeFooter' }
+      }
     });
     $urlRouterProvider.otherwise('/home');
   }]).run(function ($state,$rootScope) {
