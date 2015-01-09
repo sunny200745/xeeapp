@@ -47,7 +47,7 @@ angular.module('xeApp.factory', [])
           return auth.$createUser(user.email, user.password);
         },
         login: function (user) {
-          return auth.$login('password', user);
+          return auth.$login('password',user);
         },
         logout: function () {
           auth.$logout();

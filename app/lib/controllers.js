@@ -9,10 +9,16 @@ angular.module('xeApp.controllers', ['ui.router'])
 	.controller('xeFooter',['$scope',function($scope){
 	}])
 	.controller('xeMain',['$scope', '$location', 'Auth',function($scope, $location, Auth){
-		$scope.fn_login = function () {
-		    Auth.login($scope.user).then(function() {
-		        $location.path( "/dashboard" );		     
-		    });
+		
+		$scope.fn_login = function () {		
+			var userObj = {
+				'email' : $scope.email,
+				'password' : $scope.password
+			}    
+		   
+	        Auth.login(userObj).then(function () {
+	            $location.path( "/dashboard" );	
+	        })
 		};
 		
 	}])
