@@ -62,11 +62,9 @@ angular.module('xeApp.factory', [])
       };
 
       $rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
-        console.log('logged in');
         angular.copy(user, Auth.user);
       });
       $rootScope.$on('$firebaseSimpleLogin:logout', function() {
-        console.log('logged out');
         angular.copy({}, Auth.user);
       });
 

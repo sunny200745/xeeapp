@@ -24,8 +24,11 @@ angular.module('xeApp.controllers', ['ui.router'])
 			}    
 		   
 	        Auth.login(userObj).then(function () {
-	            $location.path( "/dashboard" );	
-	        })
+	        	$location.path( "/dashboard" );	
+	        }, function (error) {
+		      console.debug(error)
+		      $scope.error = error.code.split('_')[1]
+		    })
 		};
 		
 	}])
