@@ -240,7 +240,7 @@ span.glyphicon-log-in{
   right: 15px;
 }
 .home .footer{display: none;}
-.status p.name{font-size: 14px; font-weight: 500;}
+.status p.name{font-size: 14px; font-weight: 500; padding-top: 10px;}
 .status p.name span{font-size: 16px; color: #FF6300; font-weight: 700;}
 .person-search .dropdown-menu{ width: 100% !important;}
 
@@ -331,4 +331,9 @@ span.glyphicon-log-in{
     font-weight: 400;
     padding-bottom: 10px;
     text-align: center;
+}
+.planned-leave{
+  background:url(../images/.jpg) no-repeat;
+  width: 32px;
+  height: 32px;
 }
