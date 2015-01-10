@@ -4,9 +4,11 @@
 angular.module('xeApp.controllers', ['ui.router', 'chieffancypants.loadingBar'])
 	.controller('xeInit',['$scope',function($scope){
 	}])
-	.controller('xeHeader',['$scope', '$location', 'Auth', '$stateParams',function($scope, $location, Auth, $stateParams){
+	.controller('xeHeader',['$scope', '$location', 'Auth', '$stateParams', '$rootScope',function($scope, $location, Auth, $stateParams, $rootScope){
 		if(angular.isDefined($stateParams.for)){
 			$scope.applyFor = $stateParams.for.toUpperCase();
+			// Apply a better way to implement this
+			$rootScope.applyForHeading = $scope.applyFor;
 		}
 		
 		$scope.logout = function () {				
@@ -17,7 +19,13 @@ angular.module('xeApp.controllers', ['ui.router', 'chieffancypants.loadingBar'])
 			$window.history.back();
 		}
 	}])
-	.controller('xeFooter',['$scope',function($scope){
+	.controller('xeFooter',['$scope', '$location',function($scope, $location){
+		$scope.fn_OpenStats = function(){
+			$location.path( "/status" );	
+		};
+		$scope.fn_OpenDashboard = function(){
+			$location.path( "/dashboard" );	
+		};
 	}])
 	.controller('xeMain',['$scope', '$location', 'Auth', 'cfpLoadingBar',function($scope, $location, Auth, cfpLoadingBar){
 		
@@ -74,8 +82,12 @@ angular.module('xeApp.controllers', ['ui.router', 'chieffancypants.loadingBar'])
 		$scope.data = dataService.getSearchedData();
 		
 	}])
-	.controller('xeApply',['$scope', '$stateParams', '$rootScope', function($scope, $stateParams, $rootScope){
+	.controller('xeApply',['$scope', '$stateParams', '$rootScope', '$location', function($scope, $stateParams, $rootScope, $location){
 		//$scope.applyFor = $stateParams.for;
 		//$rootScope.$state.current.data.title = $rootScope.$state.current.data.title+" "+applyFor.toUpperCase();
+		$scope.fn_submitApply = function(){
+			
+			$location.path( "/apply/"+$rootScope.applyForHeading+"/success" );	
+		}
 		
 	}]);

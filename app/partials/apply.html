@@ -1,12 +1,12 @@
 <div class="container">		
 		<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-			<form>
+			<form ng-submit="fn_submitApply()">
 				<p><label>Date From</label>
-				<input type="date" step="7" min="2014-09-08" class="form-control dateTo">
+				<input type="date" step="1" min="2014-09-08" class="form-control dateTo">
 				</p>
 				<p><label>Date To</label>
-				<input type="date" step="7" min="2014-09-08" class="form-control dateTo">
+				<input type="date" step="1" min="2014-09-08" class="form-control dateTo">
 				</p>
 				<p class="mrgntp20">				
 					<select class="form-control">
@@ -19,7 +19,7 @@
 				<label>Reason</label>
 				<textarea placeholder="Reason" class="form-control"></textarea>
 				</p>
-				<p class="notify"><label><input type="checkbox"/> Send copy tomy team email</label></p>
+				<p class="notify"><label><input type="checkbox"/> Send copy of email to my team</label></p>
 				<p><button type="submit" class="btn btn-primary btn-block active">Apply Now<span class="glyphicon glyphicon-circle-arrow-right"></span></button></p>
 			</form>
 		</div>
