@@ -240,8 +240,8 @@ span.glyphicon-log-in{
   right: 15px;
 }
 .home .footer{display: none;}
-.status p{font-size: 16px; font-weight: 500;}
-.status p span.name{font-size: 14px; color: #FF6300; font-weight: 700;}
+.status p.name{font-size: 14px; font-weight: 500;}
+.status p.name span{font-size: 16px; color: #FF6300; font-weight: 700;}
 .person-search .dropdown-menu{ width: 100% !important;}
 
 .card{
