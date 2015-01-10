@@ -8,9 +8,11 @@ angular.module('xeApp', [
   'xeApp.directives',
   'xeApp.controllers',
   'xeApp.factory',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'chieffancypants.loadingBar',
+  'ngAnimate'
 ])
-.config(["$locationProvider", "$stateProvider", "$urlRouterProvider", "$httpProvider", function($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider) {
+.config(["$locationProvider", "$stateProvider", "$urlRouterProvider", "$httpProvider", "cfpLoadingBarProvider", function($locationProvider, $stateProvider, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider) {
   $stateProvider
     .state('home', {
       url: "/home",
@@ -76,6 +78,7 @@ angular.module('xeApp', [
       }
     });
     $urlRouterProvider.otherwise('/home');
+    cfpLoadingBarProvider.includeSpinner = false;
   }]).run(function ($state,$rootScope) {
     $rootScope.$state = $state;
   }).constant('FIREBASE_URL', 'https://xeeapp.firebaseio.com/');;

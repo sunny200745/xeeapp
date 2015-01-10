@@ -21,7 +21,8 @@ module.exports = function(grunt) {
             'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
             'bower_components/angularfire/dist/angularfire.js',
             'bower_components/firebase/firebase.js',
-            'bower_components/firebase-simple-login/firebase-simple-login.js'
+            'bower_components/firebase-simple-login/firebase-simple-login.js',
+            'bower_components/angular-loading-bar/src/loading-bar.js'
             ]
       },
       prod:{}
@@ -52,17 +53,18 @@ module.exports = function(grunt) {
           "<%= pkg.dev %>/assets/styles/custom.css": "<%= pkg.dev %>/assets/styles/app/style.less"
         }
       }
-    }/*,
+    },
     concat: {
       css: {
         options: {
         },
         src: [
-          '<%= pkg.dev %>/styles/core.css'
+          '<%= pkg.dev %>/assets/styles/core.css',
+          'bower_components/angular-loading-bar/src/loading-bar.css'
         ],
-        dest: '<%= pkg.dev %>/styles/core.css'
+        dest: '<%= pkg.dev %>/assets/styles/core.css'
       }
-    }*/,
+    },
     cssmin: {
       dev: {
         options: {
@@ -97,6 +99,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['dev']);
-  grunt.registerTask('dev', ['uglify:dev', 'copy:dev', 'less:dev', 'cssmin:dev']);//'concat:css'
+  grunt.registerTask('dev', ['uglify:dev', 'copy:dev', 'less:dev', 'concat:css', 'cssmin:dev']);
   grunt.registerTask('live', ['watch']);
 };

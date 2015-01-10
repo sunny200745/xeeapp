@@ -1,7 +1,7 @@
 'use strict';
 /* Common controllers */
 
-angular.module('xeApp.controllers', ['ui.router'])
+angular.module('xeApp.controllers', ['ui.router', 'chieffancypants.loadingBar'])
 	.controller('xeInit',['$scope',function($scope){
 	}])
 	.controller('xeHeader',['$scope', '$location', 'Auth', '$stateParams',function($scope, $location, Auth, $stateParams){
@@ -19,19 +19,23 @@ angular.module('xeApp.controllers', ['ui.router'])
 	}])
 	.controller('xeFooter',['$scope',function($scope){
 	}])
-	.controller('xeMain',['$scope', '$location', 'Auth',function($scope, $location, Auth){
+	.controller('xeMain',['$scope', '$location', 'Auth', 'cfpLoadingBar',function($scope, $location, Auth, cfpLoadingBar){
 		
 		$scope.fn_login = function () {		
+			cfpLoadingBar.start();
+			cfpLoadingBar.inc();
 			var userObj = {
 				'email' : $scope.email,
 				'password' : $scope.password
 			}    
 		   
 	        Auth.login(userObj).then(function () {
+	        	cfpLoadingBar.complete();
 	        	$location.path( "/dashboard" );	
 	        }, function (error) {
 		      console.debug(error)
 		      $scope.error = error.code.split('_')[1]
+		      cfpLoadingBar.complete();
 		    })
 		};
 		
