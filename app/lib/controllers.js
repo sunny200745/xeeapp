@@ -17,7 +17,10 @@ angular.module('xeApp.controllers', ['ui.router'])
 			$window.history.back();
 		}
 	}])
-	.controller('xeFooter',['$scope',function($scope){
+	.controller('xeFooter',['$scope', '$location',function($scope, $location){
+		$scope.fn_OpenStats = function(){
+			$location.path( "/status" );	
+		};
 	}])
 	.controller('xeMain',['$scope', '$location', 'Auth',function($scope, $location, Auth){
 		
