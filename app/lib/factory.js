@@ -30,10 +30,7 @@ angular.module('xeApp.factory', [])
         var xebiaData = $firebase(ref.child('xebiaData')).$asArray();
 
         var data = {
-            all: xebiaData,       
-            get: function (postId) {
-              return $firebase(ref.child('xebiaData').child(postId)).$asObject();
-            }
+            all: xebiaData
         };
         return data;
       
@@ -62,11 +59,9 @@ angular.module('xeApp.factory', [])
       };
 
       $rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
-        console.log('logged in');
         angular.copy(user, Auth.user);
       });
       $rootScope.$on('$firebaseSimpleLogin:logout', function() {
-        console.log('logged out');
         angular.copy({}, Auth.user);
       });
 
