@@ -4,7 +4,11 @@
 angular.module('xeApp.controllers', ['ui.router'])
 	.controller('xeInit',['$scope',function($scope){
 	}])
-	.controller('xeHeader',['$scope', '$location', 'Auth',function($scope, $location, Auth){
+	.controller('xeHeader',['$scope', '$location', 'Auth', '$stateParams',function($scope, $location, Auth, $stateParams){
+		if(angular.isDefined($stateParams.for)){
+			$scope.applyFor = $stateParams.for.toUpperCase();
+		}
+		
 		$scope.logout = function () {				
 	        Auth.logout()
 	        $location.path( "/home" );
@@ -33,16 +37,12 @@ angular.module('xeApp.controllers', ['ui.router'])
 		
 	}])
 	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService', '$http', '$q',function($scope, $location, xebiaData, dataService, $http, $q){
-		$scope.searchContent;		
-		
 		var users = [];
 		angular.forEach(xebiaData.all,function(val, index){
 			users.push(val.NAME);				
-		});
-		
+		});		
 		$scope.users = users;
-		console.debug($scope.users)
-		
+
 		$scope.fn_profileSearch = function(){
 			if(!$scope.searchContent){
 				return false;
@@ -70,6 +70,8 @@ angular.module('xeApp.controllers', ['ui.router'])
 		$scope.data = dataService.getSearchedData();
 		
 	}])
-	.controller('xeApply',['$scope', '$stateParams', function($scope, $stateParams){
+	.controller('xeApply',['$scope', '$stateParams', '$rootScope', function($scope, $stateParams, $rootScope){
+		//$scope.applyFor = $stateParams.for;
+		//$rootScope.$state.current.data.title = $rootScope.$state.current.data.title+" "+applyFor.toUpperCase();
 		
 	}]);

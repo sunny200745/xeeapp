@@ -2,14 +2,14 @@
 <div class="container">
   <div class="header">
     <div class="row pdtp10">
-      <div class="col-md-3 col-sm-3 col-xs-3">
+      <div class="col-md-2 col-sm-2 col-xs-2">
         <a class ="glyphicon glyphicon-chevron-left" back-button></a>
       </div>
-      <div class="col-md-4 col-sm-4 col-xs-4 text-center">
+      <div class="col-md-8 col-sm-8 col-xs-8 text-center">
         <a ui-sref="home"><img src="assets/images/xebia_logo.png" alt="" class="logo"></a>
-        <p class="page-heading">{{$state.current.data.title}}</p>
+        <p class="page-heading">{{$state.current.data.title}} {{applyFor}}</p>
       </div>
-       <div class="col-md-3 col-sm-3 col-xs-3 text-right">      
+       <div class="col-md-2 col-sm-2 col-xs-2 text-right">      
       <p class="log-in"><span class="glyphicon glyphicon-log-in" ng-click="logout()"></span></p>
       </div>
     </div>
