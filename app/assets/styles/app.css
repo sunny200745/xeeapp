@@ -42,7 +42,6 @@ header{
 .home .logo{display: inline;}
 .home .submit{
   padding: 35px 20px 140px 20px;
-  background: #e7e7e7;
   text-align: center;
   margin-left: -15px;
   margin-right: -15px;
@@ -51,6 +50,8 @@ header{
   width: 100%;
   bottom: 0px;
 }
+.home h1{  color: #333;
+  font-weight: 400; margin-top: 100px;}
 .home button{
     width: 90%;
     margin-top: 0px;
