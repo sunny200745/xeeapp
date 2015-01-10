@@ -24,7 +24,7 @@ label{
     font-size: 14px;
 }
 header{
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 .home header{
   margin-bottom: 0;
@@ -46,7 +46,7 @@ header{
     text-align: center;
     margin-left: -15px;
     margin-right: -15px;
-    margin-top: 20px;
+    margin-top: 148px;
 }
 .home button{
     width: 90%;
@@ -236,3 +236,10 @@ span.glyphicon-log-in{
 .dashboard a.glyphicon-chevron-left, .home a.glyphicon-chevron-left{
   display: none;
 }
+.has-error .form-control-feedback{
+  top:30px;
+  right: 15px;
+}
+.home .footer{display: none;}
+.status p{font-size: 16px; font-weight: 500;}
+.status p span.name{font-size: 14px; color: #FF6300; font-weight: 700;}
