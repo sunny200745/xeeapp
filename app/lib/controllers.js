@@ -33,33 +33,25 @@ angular.module('xeApp.controllers', ['ui.router'])
 		
 	}])
 	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService', '$http', '$q',function($scope, $location, xebiaData, dataService, $http, $q){
-		$scope.searchContent;
-		// Any function returning a promise object can be used to load values asynchronously
-		$scope.getUsers = function(str) {
-				var searchData = [];
-				return searchData;
-				var prom = []	
-				prom.push(angular.forEach(xebiaData.all,function(val, index){
-					console.log(val, index)
-					if(str == val.NAME){
-						searchData.push(val);
-					}
-				}));	
-				$q.all(prom, function(status){
-					console.log(searchData)
-					return searchData.data.results.map(function(item){
-						return item.NAME;
-					});
-				})
-		};
+		$scope.searchContent;		
+		
+		var users = [];
+		angular.forEach(xebiaData.all,function(val, index){
+			users.push(val.NAME);				
+		});
+		
+		$scope.users = users;
+		console.debug($scope.users)
+		
 		$scope.fn_profileSearch = function(){
 			if(!$scope.searchContent){
-				//alert("Nothing entered")
 				return false;
 			}else{
-				var xebiaId = $scope.searchContent.match(/xi/gi) ? $scope.searchContent.toUpperCase() : 'XI'+$scope.searchContent;	
+				
+				var xebiaId, xebeeName = $scope.searchContent;				
 				angular.forEach(xebiaData.all,function(val, index){
-					if(xebiaId == val.ID){
+					if(xebeeName == val.NAME){
+						xebiaId = val.ID;
 						dataService.setSearchedData(val);
 						return false
 					}

@@ -30,10 +30,7 @@ angular.module('xeApp.factory', [])
         var xebiaData = $firebase(ref.child('xebiaData')).$asArray();
 
         var data = {
-            all: xebiaData,       
-            get: function (postId) {
-              return $firebase(ref.child('xebiaData').child(postId)).$asObject();
-            }
+            all: xebiaData
         };
         return data;
       
