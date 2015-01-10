@@ -27,7 +27,7 @@ angular.module('xeApp.controllers', ['ui.router', 'chieffancypants.loadingBar'])
 			$location.path( "/dashboard" );	
 		};
 	}])
-	.controller('xeMain',['$scope', '$location', 'Auth', 'cfpLoadingBar',function($scope, $location, Auth, cfpLoadingBar){
+	.controller('xeMain',['$scope', '$location', 'Auth', 'cfpLoadingBar','dataService','xebiaData',function($scope, $location, Auth, cfpLoadingBar, dataService, xebiaData){
 		
 		$scope.fn_login = function () {		
 			cfpLoadingBar.start();
@@ -39,22 +39,24 @@ angular.module('xeApp.controllers', ['ui.router', 'chieffancypants.loadingBar'])
 		   
 	        Auth.login(userObj).then(function () {
 	        	cfpLoadingBar.complete();
+	        	/* fetch data and set into service*/
+	        	var users = [];
+    			angular.forEach(xebiaData.all,function(val, index){
+    				users.push(val.NAME);				
+    			});
+    			dataService.setUserData(users);
+
 	        	$location.path( "/dashboard" );	
 	        }, function (error) {
-		      console.debug(error)
 		      $scope.error = error.code.split('_')[1]
 		      cfpLoadingBar.complete();
 		    })
 		};
 		
 	}])
-	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService', '$http', '$q',function($scope, $location, xebiaData, dataService, $http, $q){
-		var users = [];
-		angular.forEach(xebiaData.all,function(val, index){
-			users.push(val.NAME);				
-		});		
-		$scope.users = users;
-
+	.controller('xeDashboard',['$scope', '$location', 'xebiaData', 'dataService', '$rootScope', '$q',function($scope, $location, xebiaData, dataService, $rootScope, $q){
+			
+		$scope.users = dataService.getUserData();
 		$scope.fn_profileSearch = function(){
 			if(!$scope.searchContent){
 				return false;
