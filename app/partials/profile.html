@@ -1,24 +1,28 @@
 <div class="container">		
 		<div class="row">
-			<div class="col-md-4 col-sm-4 col-xs-4">
-				<img ng-src="https://drive.google.com/uc?id={{data.PHOTO}}" class="profile-pic" />
-			</div>
-			<div class="col-md-8 col-sm-8 col-xs-8 profile-details">
-				<p>{{data.ID}}</p>
-				<p>{{data.NAME}}</p>
-				<p>{{data.EMAIL}}</p>
-				<p>{{data.PHONENUMBER}}</p>				
-				<p>{{data.GENDER}}</p>	
-			</div>
-		</div>
-		<div class="row pdtp25">
-			<div class="col-md-12 col-sm-12 col-xs-12">
-				<p class="status"><span>Today's Status :</span> WFH</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 col-sm-12 col-xs-12">
-				<p class="status"><span>Project Aligned in :</span> Pioneer</p>
-			</div>
-		</div>
+			<div class="col-md-12 card">
+				<div class="front">
+		            <div class="cover">
+		                <img src="http://ct-freebies.herokuapp.com/images/rotating_card_thumb.png">
+		            </div>
+		            <div class="user">
+		                <div class="profile-pic" style="background-image: url(https://drive.google.com/uc?id={{data.PHOTO}})"></div>
+		            </div>
+		            <div class="content">
+		                <div class="main">
+		                    <h3 class="name">{{data.NAME}}</h3>
+		                    <p class="profession">Java Developer</p>
+		                    <h5><i class="fa fa-map-marker fa-fw text-muted"></i> <strong>In office</strong></h5>
+		                    <h5><i class="fa fa-map-marker fa-fw text-muted"></i> {{data.PHONENUMBER}}</h5>
+		                    <h5><i class="fa fa-building-o fa-fw text-muted"></i> Team Beachbody</h5>
+		                    <h5><i class="fa fa-envelope-o fa-fw text-muted"></i> {{data.EMAIL}}</h5>
+		                    <!-- <h5><i class="fa fa-envelope-o fa-fw text-muted"></i> {{data.GENDER}}</h5> -->
+		                </div>
+		                <div class="footer">
+		                    
+		                </div>
+		            </div>
+		        </div> 
+        </div></div>
 </div>
+
